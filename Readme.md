@@ -1,8 +1,8 @@
 ### Kinesis Context Propagation Examples
 
-This repository contains example producers and consumers.  It leaves out the details of setting up the AWS sdks
+This repository contains example producers and consumers using the AWS sdk in additon to KPL/KCL.  It leaves out the details of setting up the specific clients
 
-The `SomeMessage` class implements `TextMap` which allows Inject/Extract to work.
+The `SomeMessage` class implements `TextMap` which is the holder for propagation headers and values
 An alternative approach to using a `Map` inside the message would be to specify fields for all of the propagation headers separately inside the class and implementing iterator on those
 
 The headers for datadog propagation are:
@@ -24,4 +24,4 @@ The headers for B3 propagation are:
 ```
 from [B3HttpCode](https://github.com/DataDog/dd-trace-java/blob/master/dd-trace-core/src/main/java/datadog/trace/core/propagation/B3HttpCodec.java#L23)
 
-Yet another approach would be using a separate bridge class that implements `TextMap` and in turn set/gets items from message
+A third approach would be using a separate bridge class that implements `TextMap` and in turn set/gets items from message
