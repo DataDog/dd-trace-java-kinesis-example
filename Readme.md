@@ -1,4 +1,4 @@
-### Kinesis Context Propagation Examples
+## Kinesis Context Propagation Examples
 
 This repository contains example producers and consumers using the AWS sdk in additon to KPL/KCL.  It leaves out the details of setting up the specific clients
 
@@ -25,3 +25,11 @@ The headers for B3 propagation are:
 from [B3HttpCode](https://github.com/DataDog/dd-trace-java/blob/master/dd-trace-core/src/main/java/datadog/trace/core/propagation/B3HttpCodec.java#L23)
 
 A third approach would be using a separate bridge class that implements `TextMap` and in turn set/gets items from message
+
+### Setting up the tracer
+With the java agent install with the application, there is no setup required.  If the java agent is not installed, `NoAgentMain` shows an example of setting up the tracer manually.
+
+### Reference Documentation:
+* [Java Tracer Documentation](https://docs.datadoghq.com/tracing/setup/java/)
+* [Custom Instrumentation Documentation](https://docs.datadoghq.com/tracing/custom_instrumentation/java/)
+* [dd-trace-java on Github](https://github.com/DataDog/dd-trace-java)
